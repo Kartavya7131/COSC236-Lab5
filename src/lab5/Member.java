@@ -30,14 +30,14 @@ public class Member {
 			book.setIsAvailable(false);
 		}
 	}
-	public void returnBook(PaperBook book) {
+	public void returnBook(Book book) {
 		if (book != null) {
 			borrowedBooks.remove(book);
 			book.setIsAvailable(true);
 		}
 	}
 	public void listBorrowedBooks() {
-		for (PaperBook book : borrowedBooks)
+		for (Book book : borrowedBooks)
 			System.out.println(book); // book.toString()
 	}
 	public int borrowedBooksCount() {
@@ -46,7 +46,7 @@ public class Member {
 	public void returnAllBooks() {
 		Iterator<PaperBook> bookIterator = borrowedBooks.iterator();
 	    while(bookIterator.hasNext()) {
-		   	 PaperBook book = bookIterator.next();
+		   	 Book book = bookIterator.next();
 		   	 book.setIsAvailable(true);
 	    }
 	    borrowedBooks.clear(); // clear array of borrowed books

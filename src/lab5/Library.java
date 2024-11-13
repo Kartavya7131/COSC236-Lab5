@@ -42,10 +42,10 @@ public class Library {
 		}
 	}
 	public void removeBook(String title) {
-		PaperBook book = findBookByTitle(title);
+		Book book = findBookByTitle(title);
 		removeBook(book);
 	}
-	public void removeBook(PaperBook book) {
+	public void removeBook(Book book) {
 		if (book != null)
 			catalog.remove(book); // book stays with the member who has it
 	}
@@ -59,7 +59,7 @@ public class Library {
 	public void showBooks() {
 		Iterator<PaperBook> bookIterator = catalog.iterator();
 	    while(bookIterator.hasNext()) {
-		   	 PaperBook book = bookIterator.next();
+		   	 Book book = bookIterator.next();
 		   	 System.out.println(book); // book.toString()
 	    }
 	}
