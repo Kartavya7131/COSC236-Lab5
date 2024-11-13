@@ -52,7 +52,7 @@ public class LibrarianController {
 	
 	public void borrowBookByMember(String title, String name) {
 		Member member = library.findMemberByName(name); // use library for search
-		PaperBook book = library.findBookByTitle(title);  // use library for search
+		Book book = library.findBookByTitle(title);  // use library for search
 		if (book != null && member != null)
 			member.borrowBook(book); // member borrows a book, not library 
 		else 	
