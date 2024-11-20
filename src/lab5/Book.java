@@ -11,3 +11,5 @@ public interface Book {
 	boolean getIsAvailable();
 
 }
+
+
