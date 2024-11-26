@@ -5,11 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import lab5.LibrarianController;
 import lab5.Member;
 import lab5.PaperBook;
 
 class TestBorrowBooks {
-
+	
+	LibrarianController testLibrary = new LibrarianController();
+	
 	Member member1;
 	Member member2;
 	
@@ -63,5 +66,4 @@ class TestBorrowBooks {
 		assertEquals(member1.borrowedBooksCount(), 0, "Member 1 should have no books");
 		
 	}
-
 }

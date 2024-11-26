@@ -59,13 +59,13 @@ public class LibrarianController {
 			System.out.println("Member " + name + " not found.");
 	}
 	
-	public void borrowBookByMember(String title, String name) {
+	public String borrowBookByMember(String title, String name) {
 		Member member = library.findMemberByName(name); // use library for search
 		Book book = library.findBookByTitle(title);  // use library for search
 		if (book != null && member != null)
-			member.borrowBook(book); // member borrows a book, not library 
+			return member.borrowBook(book); // member borrows a book, not library 
 		else 	
-			System.out.println("Either book " + title + " or member " + name + " not found.");
+			return "Either book " + title + " or member " + name + " not found.";
 	}
 	
 	public void returnBookByMember(String title, String name) {

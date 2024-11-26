@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import lab5.Book;
+import lab5.BorrowingService;
 import lab5.Library;
 import lab5.PaperBook;
 import lab5.Member;
@@ -74,6 +75,5 @@ class TestAddRemoveBooks {
 		Book b = member.getBorrowedBooks().get(0); // the only book
 		assertEquals(b, book1,"The owned book should be the removed book");
 	}
-	
 	
 }

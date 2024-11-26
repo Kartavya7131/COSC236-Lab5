@@ -9,8 +9,10 @@ import org.junit.platform.suite.api.Suite;
 				TestAddRemoveMembers.class,
 				TestFindClassString.class,
 				TestBorrowBooks.class,
+				TestBorrowAndReturnMessages.class,
 				TestNotAvailableBook.class,
 				TestRemoveMemberWithBooks.class,
+				TestSingleton.class,
 				TestController.class,
 				BookTypeTest.class})
 public class AllTests {
