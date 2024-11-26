@@ -35,6 +35,7 @@ public class Member {
 		BorrowingBookResult result = borrowingService.borrowBook(this, book);
 		
 		if(result.getResult()) {
+			borrowedBooks.add(book);
 			return result.getMessage();
 		}else {
 			return result.getMessage();
@@ -45,6 +46,7 @@ public class Member {
 		BorrowingBookResult result = borrowingService.returnBook(this, book);
 		
 		if(result.getResult()) {
+			borrowedBooks.remove(book);
 			return result.getMessage();
 		}else {
 			return result.getMessage();
