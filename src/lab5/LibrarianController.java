@@ -3,10 +3,17 @@ package lab5;
 public class LibrarianController {
 	
 	Library library; // Library dependency
+	PaperBookFactory paperBookFactory; 
+	EBookFactory eBookFactory;
+	AudioBookFactory audioBookFactory;
 	
-	public LibrarianController( ) {
+	public LibrarianController() {
 		this.library = new Library(); // Constructor injection
+		this.paperBookFactory = new PaperBookFactory();
+		this.eBookFactory = new EBookFactory();
+		this.audioBookFactory = new AudioBookFactory();
 	}
+	
 	public Library getLibrary() {
 		return this.library;
 	}
@@ -17,17 +24,22 @@ public class LibrarianController {
 		library.showMembers();
 	}
 	
+	public void addBook(BookFactory factory, String title) {
+		library.addBook(factory.createBook(title));;
+	}
+	
 	public void addPaperBook(String title) {
-        library.addBook(new PaperBook(title));
+        addBook(paperBookFactory, title);
     }
 
     public void addEBook(String title) {
-        library.addBook(new Ebook(title));
+        addBook(eBookFactory, title);
     }
 
     public void addAudioBook(String title) {
-        library.addBook(new AudioBook(title));
+        addBook(audioBookFactory, title);
     }
+    
 	public void addMember(String name) {
 		library.addMember(new Member(name)); // Member class constructor dependency
 	}
